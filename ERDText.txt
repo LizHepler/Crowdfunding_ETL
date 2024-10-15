@@ -1,0 +1,33 @@
+category
+--
+category_id STRING PK
+category STRING
+
+subcategory
+--
+subcategory_id STRING PK
+subcategory STRING
+
+campaign
+--
+cf_id INTEGER PK
+contact_id INTEGER FK - contacts.contact_id
+company_name STRING
+description STRING
+goal FLOAT
+pledged FLOAT
+outcome STRING
+backers_count INTEGER
+country STRING
+currency STRING
+launch_date DATETIME
+end_date DATETIME
+category_id STRING FK >- category.category_id
+subcategory_id STRING FK >- subcategory.subcategory_id
+
+contacts
+--
+contact_id INTEGER PK
+first_name STRING
+last_name STRING
+email STRING
